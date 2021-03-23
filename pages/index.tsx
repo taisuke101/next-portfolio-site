@@ -4,34 +4,36 @@ import Experience from "../components/Experience";
 
 import Hero from "../components/Hero";
 import Services from "../components/Services";
+import { Jobs } from "../types";
 
-interface HomeProps { 
+interface HomeProps {
+  jobs: Jobs[];
 }
 
-const Home: FC<HomeProps> = () => {
+const Home: FC<HomeProps> = ({ jobs }) => {
   return (
     <>
       <Hero />
       <Services />
-      <Experience/>
+      <Experience jobs={jobs}/>
     </>
   )
 }
 
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   const res = await fetch('https://next-portfolio.microcms.io/api/v1/services', {
-//     headers: {"X-API-KEY":process.env.API_KEY}
-//   })
-//   .then(res => res.json())
-//   .catch(() => null);
-  
-//   return {
-//       props: {
-//         posts: res.contents
-//       }
-//   }
-// }
+export const getStaticProps: GetStaticProps = async () => {
+  const res = await fetch('https://next-portfolio.microcms.io/api/v1/experience', {
+    headers: {"X-API-KEY":process.env.API_KEY}
+  })
+  .then(res => res.json())
+  .catch(() => null);
+
+  return {
+      props: {
+        jobs: res.contents,
+      }
+  }
+}
 
 
 
