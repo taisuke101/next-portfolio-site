@@ -14,7 +14,7 @@ const ContactForm: VFC<{}> = () => {
     const onSubmit = (data: InputForm ) => console.log(data);
     
     return (
-        <div className='flex items-center h-screen bg-gray-100'>
+        <article className='flex items-center h-screen bg-gray-100'>
             <form 
                 className='flex flex-col p-10 mx-auto mt-6 space-y-5 text-center bg-white rounded-lg backdrop-blur-30'
                 onSubmit={handleSubmit(onSubmit)}
@@ -55,7 +55,7 @@ const ContactForm: VFC<{}> = () => {
                     text='送信'
                 />
             </form>
-        </div>
+        </article>
     );
 }
 export default ContactForm;

@@ -9,13 +9,13 @@ interface HeroProps {
 
 const Hero: VFC<HeroProps> = ({}) => {
         return (
-            <div className='relative flex justify-center h-screen text-5xl bg-navy-100'>
-                <div className='absolute ml-6 top-1/4 md:text-center md:space-y-7'>
+            <article className='relative flex justify-center text-5xl h-75vh md:h-screen bg-navy-100'>
+                <section className='absolute ml-6 top-1/4 md:text-center md:space-y-7'>
                     <div className='h-1 mb-5 w-60 bg-navy-600 md:w-full'></div>
-                    <h1 className='text-6xl md:text-7xl font-bold tracking-wider break-words text-navy-1000'>
+                    <h1 className='text-6xl font-bold tracking-wider break-words md:text-7xl text-navy-1000'>
                         Taisuke Yamamoto
                     </h1>
-                    <h5 className='mt-4 text-2xl md:text-4xl font-semibold tracking-wider text-gray-800'>
+                    <h5 className='mt-4 text-2xl font-semibold tracking-wider text-gray-800 md:text-4xl'>
                         WebEngineer,Developper
                     </h5>
                     <div className='pt-5'>
@@ -30,8 +30,8 @@ const Hero: VFC<HeroProps> = ({}) => {
                             containerClass='flex md:justify-center'
                         />
                     </div>
-                </div>
-            </div>
+                </section>
+            </article>
         );
 }
 export default Hero;

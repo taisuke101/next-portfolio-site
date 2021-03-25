@@ -14,8 +14,18 @@ module.exports = {
       'blur-50': 'blur(50px)'
     },
     extend: {
+      zIndex: {
+        '1': '1',
+        '2': '2'
+      },
+      inset: {
+        'm10': '-2.5rem',
+        'm20': '-5rem',
+      },
       height: {
         '50vh': '50vh',
+        '60vh': '60vh',
+        '65vh': '65vh',
         '75vh': '75vh',
         '150vh': '150vh',
         '200vh': '200vh',
@@ -40,7 +50,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      textColor: ['active', 'focus']
+    },
   },
   plugins: [
     require('tailwindcss-filters'),
