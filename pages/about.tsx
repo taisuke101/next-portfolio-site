@@ -1,12 +1,53 @@
+import { GetStaticProps } from 'next';
 import React, { FC } from 'react'
 
-interface AboutProps {
+import AboutMe from '../components/AboutMe';
+import Experience from '../components/Experience';
+import { Jobs, MyInfo, Stack } from '../types';
 
+interface AboutProps {
+    myInfo: MyInfo;
+    skill: Stack[];
+    jobs: Jobs[];
 }
 
-const About: FC<AboutProps> = ({}) => {
+const About: FC<AboutProps> = ({ myInfo, skill, jobs }) => {
         return (
-            <div>about !</div>
+            <>
+                <AboutMe 
+                    myInfo={myInfo}
+                    skill={skill}
+                />
+                <Experience 
+                    jobs={jobs}
+                    showLink={false}
+                />
+            </>
         );
 }
 export default About;
+
+
+export const getStaticProps: GetStaticProps = async () => {
+    const resMyInfo = await fetch(
+        'https://next-portfolio.microcms.io/api/v1/about?draftKey=tJAA5zQe5', 
+        { headers: {"X-API-KEY":process.env.API_KEY}}
+    )
+    .then(resMyInfo => resMyInfo.json())
+    .catch(() => null);
+
+    const resJobs = await fetch(
+        'https://next-portfolio.microcms.io/api/v1/experience', 
+        { headers: {"X-API-KEY":process.env.API_KEY} }
+    )
+    .then(resJobs => resJobs.json())
+    .catch(() => null);
+
+    return {
+        props: {
+            myInfo: resMyInfo,
+            skill: resMyInfo.stack,
+            jobs: resJobs.contents,
+        }
+    }
+}  

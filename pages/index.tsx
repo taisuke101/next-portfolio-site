@@ -15,7 +15,10 @@ const Home: FC<HomeProps> = ({ jobs }) => {
     <>
       <Hero />
       <Services />
-      <Experience jobs={jobs}/>
+      <Experience 
+        jobs={jobs}
+        showLink={true}
+      />
     </>
   )
 }
