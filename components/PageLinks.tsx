@@ -15,12 +15,12 @@ const PageLinks: VFC<{}> = () => {
                 !open 
                 ? (
                     <>
-                        <ul className='items-center hidden md:flex'>
+                        <ul className='items-center hidden sm:flex'>
                             {
                                 linkData.map(link => (
-                                    <li key={link.id} className='p-2 mx-4 md:mx-2'>
+                                    <li key={link.id} className='p-2 mx-4 sm:mx-2'>
                                         <Link href={link.url}>
-                                        <a className='text-2xl font-bold tracking-widest text-gray-600 transition transform md:text-2xl hover:text-navy-600'>
+                                        <a className='text-lg font-bold tracking-wider text-gray-600 transition transform md:text-2xl hover:text-navy-600'>
                                             {link.text}
                                         </a>
                                         </Link>
@@ -30,7 +30,7 @@ const PageLinks: VFC<{}> = () => {
                         </ul>
                         <button
                             type="button"
-                            className="mr-5 text-4xl md:hidden text-navy-900"
+                            className="mr-5 text-4xl sm:hidden text-navy-900"
                             onClick={() => setOpen(true)}
                         >
                             <FontAwesomeIcon icon={faBars}/>
@@ -38,7 +38,7 @@ const PageLinks: VFC<{}> = () => {
                     </>
                 ) 
                 : (
-                    <section className="fixed top-0 left-0 z-20 w-full h-full bg-gray-100 backdrop-blur-10 bg-opacity-10 bg-clip-padding md:hidden">
+                    <section className="fixed top-0 left-0 z-20 w-full h-full bg-gray-100 backdrop-blur-10 bg-opacity-10 bg-clip-padding sm:hidden">
                         <button
                             type='button'
                             className='absolute text-5xl text-red-700 top-4 right-6'

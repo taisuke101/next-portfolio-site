@@ -27,6 +27,7 @@ module.exports = {
         '60vh': '60vh',
         '65vh': '65vh',
         '75vh': '75vh',
+        '120vh': '120vh',
         '150vh': '150vh',
         '200vh': '200vh',
       },
@@ -55,6 +56,7 @@ module.exports = {
     },
   },
   plugins: [
+    require('@tailwindcss/typography'),
     require('tailwindcss-filters'),
   ],
 }
