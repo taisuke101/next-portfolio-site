@@ -4,10 +4,10 @@ import Experience from "../components/Experience";
 
 import Hero from "../components/Hero";
 import Services from "../components/Services";
-import { Jobs } from "../types";
+import { Job, FetchJob } from "../types";
 
 interface HomeProps {
-  jobs: Jobs[];
+  jobs: Job[];
 }
 
 const Home: FC<HomeProps> = ({ jobs }) => {
@@ -23,9 +23,8 @@ const Home: FC<HomeProps> = ({ jobs }) => {
   )
 }
 
-
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch('https://next-portfolio.microcms.io/api/v1/experience', {
+  const res: FetchJob = await fetch('https://next-portfolio.microcms.io/api/v1/experience', {
     headers: {"X-API-KEY":process.env.API_KEY}
   })
   .then(res => res.json())
@@ -37,9 +36,5 @@ export const getStaticProps: GetStaticProps = async () => {
       }
   }
 }
-
-
-
-
 
 export default Home;

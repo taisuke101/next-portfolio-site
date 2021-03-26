@@ -1,4 +1,4 @@
-export interface Jobs {
+export interface Job {
     id: string;
     title: string;
     position: string;
@@ -9,6 +9,21 @@ export interface Jobs {
     createdAt: string;
     revisedAt: string;
     updatedAt: string;
+}
+
+export interface FetchJob {
+    contents: {
+        id: string;
+        title: string;
+        position: string;
+        from: string;
+        until: string;
+        description: string;
+        publishedAt: string;   
+        createdAt: string;
+        revisedAt: string;
+        updatedAt: string;
+    }
 }
 
 export interface MyInfo {
@@ -22,6 +37,7 @@ export interface MyInfo {
         height: number;
         width: number;
     }
+    stack: Stack[];
     createdAt: string;
     updatedAt: string;
     publishedAt: string;
@@ -35,4 +51,42 @@ export interface Stack {
     updatedAt: string;
     publishedAt: string;
     revisedAt: string;
+}
+
+export interface Project {
+    id: string;
+    title: string;
+    description: string;
+    image: {
+        url: string;
+        height: number;
+        width: number;
+    }
+    stack: Stack[];
+    siteUrl: string;
+    period: string;
+    createdAt: string;
+    updatedAt: string;
+    publishedAt: string;
+    revisedAt: string;
+}
+
+export interface FetchProject {
+    contents: {
+        id: string;
+        title: string;
+        description: string;
+        image: {
+            url: string;
+            height: number;
+            width: number;
+        }
+        stack: Stack[];
+        siteUrl: string;
+        period: string;
+        createdAt: string;
+        updatedAt: string;
+        publishedAt: string;
+        revisedAt: string;
+    } 
 }

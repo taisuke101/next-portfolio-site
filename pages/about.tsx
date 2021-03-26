@@ -3,12 +3,12 @@ import React, { FC } from 'react'
 
 import AboutMe from '../components/AboutMe';
 import Experience from '../components/Experience';
-import { Jobs, MyInfo, Stack } from '../types';
+import { FetchJob, Job, MyInfo, Stack } from '../types';
 
 interface AboutProps {
     myInfo: MyInfo;
     skill: Stack[];
-    jobs: Jobs[];
+    jobs: Job[];
 }
 
 const About: FC<AboutProps> = ({ myInfo, skill, jobs }) => {
@@ -29,14 +29,14 @@ export default About;
 
 
 export const getStaticProps: GetStaticProps = async () => {
-    const resMyInfo = await fetch(
+    const resMyInfo: MyInfo = await fetch(
         'https://next-portfolio.microcms.io/api/v1/about?draftKey=tJAA5zQe5', 
         { headers: {"X-API-KEY":process.env.API_KEY}}
     )
     .then(resMyInfo => resMyInfo.json())
     .catch(() => null);
 
-    const resJobs = await fetch(
+    const resJobs: FetchJob = await fetch(
         'https://next-portfolio.microcms.io/api/v1/experience', 
         { headers: {"X-API-KEY":process.env.API_KEY} }
     )
