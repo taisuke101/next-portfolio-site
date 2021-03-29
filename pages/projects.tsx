@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 import React, { FC } from 'react'
 
-import ProjectCard from '../components/ProjectCard'
+import ProjectCards from '../components/ProjectCards'
 import { Project, FetchProject } from '../types';
 
 interface ProjectsProps {
@@ -11,7 +11,7 @@ interface ProjectsProps {
 const Projects: FC<ProjectsProps> = ({ projects }) => {
     return (
         <>
-            <ProjectCard 
+            <ProjectCards 
                 projects={projects} 
             />
         </>
@@ -19,7 +19,7 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const res: FetchProject = await fetch('https://next-portfolio.microcms.io/api/v1/project', {
+    const res: FetchProject = await fetch('https://next-portfolio.microcms.io/api/v1/projects', {
         headers: {"X-API-KEY":process.env.API_KEY}
     })
     .then(res => res.json())

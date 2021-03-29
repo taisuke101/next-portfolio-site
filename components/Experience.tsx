@@ -16,10 +16,10 @@ const Experience: VFC<ExperienceProps> = ({ jobs, showLink }) => {
     const { position, from, until, description } = jobs[value]
 
     return (
-        <div className='h-auto px-4 py-20 mb-10 text-center md:mb-0'>
+        <div className='h-auto px-4 py-20 text-center bg-gray-100'>
             <Title title='Experience'/>    
             <section className='md:flex md:space-x-16 md:ml-16 md:justify-center lg:space-x-48'>
-                <section className='flex flex-col justify-center my-3 text-xl text-gray-800 sm:space-x-4 sm:flex-row md:space-x-0 md:space-y-4 md:flex-col lg:space-y-8'>
+                <section className='flex flex-col justify-center my-3 space-y-3 text-xl text-gray-800 sm:space-y-0 sm:space-x-4 sm:flex-row md:space-x-0 md:space-y-4 md:flex-col lg:space-y-8'>
                     {jobs.map((job, index) => (
                         <button
                             key={job.id}
@@ -36,7 +36,7 @@ const Experience: VFC<ExperienceProps> = ({ jobs, showLink }) => {
                     <h4>{from} ~ {until}</h4>
                     <div className='flex ml-3 md:ml-0'>
                         <FaAngleDoubleRight className='hidden sm:block'/>
-                        <Markdown className='ml-4 whitespace-pre-wrap md:break-words'>
+                        <Markdown className='ml-4 prose md:break-words'>
                             {description}
                         </Markdown>
                     </div>
