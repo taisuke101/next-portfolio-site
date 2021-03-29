@@ -1,32 +1,27 @@
-import Markdown from 'markdown-to-jsx';
 import { VFC } from 'react'
 
 import { Project } from '../types';
+import LinkButton from './LinkButton';
 import Title from './Title';
 
-interface ProjectsProps {
-    projects: Project[];
+interface ProjectCardProps {
+    project: Project;
 }
 
-const Projects: VFC<ProjectsProps> = ({ projects }) => {
+const ProjectCard: VFC<ProjectCardProps> = ({ project }) => {
         return (
-            <>
-                {projects.map((project) => (
-                    <div 
-                        key={project.id}
-                        className='pt-24'
-                    >
-                        <Title title='Projects' />
-                        <div>{project.title}</div>
-                        <Markdown>{project.description}</Markdown>
-                        <img 
-                            src={project.image.url}
-                            className='object-cover' 
-                            alt=""
-                        />
-                    </div>
-                ))}
-            </>
+            <div className='h-auto px-4 py-20 space-y-5 text-center bg-gradient-to-b from-navy-300 via-navy-200 to-navy-500'>
+                <Title  title="Latest Project" />
+                <img 
+                    src={project.image.url} 
+                    className='object-cover mx-auto lg:w-2/3'
+                    alt=''
+                />
+                <LinkButton 
+                    goto='/projects'
+                    text='詳しく見る'
+                />
+            </div>
         );
 }
-export default Projects;
+export default ProjectCard;
