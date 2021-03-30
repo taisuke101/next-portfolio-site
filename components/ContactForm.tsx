@@ -1,4 +1,4 @@
-import { VFC } from 'react';
+import { FormEvent, VFC } from 'react';
 import { useForm } from 'react-hook-form';
 import SubmitButton from './SubmitButton';
 
@@ -12,12 +12,22 @@ interface InputForm {
 const ContactForm: VFC<{}> = () => {
     const { register, handleSubmit, errors } = useForm<InputForm>();
     
+    const onSubmit = async (data: FormData) => {
+        data['form-name'] = 'contact-form';
+        await fetch('/', {
+            method: 'POST',
+            body: JSON.stringify(data)
+        })
+        .catch(() => null);
+    }
+
     return (
         <article className='flex h-auto py-24 bg-gradient-to-b from-navy-300 via-navy-200 to-navy-500'>
             <form 
                 className='flex flex-col p-10 sm:w-3/4 mx-auto mt-6 space-y-5 text-center bg-gray-100 border-0.2 border-white rounded-lg shadow-xl bg-opacity-30'
                 method='post'
                 data-netlify='true'
+                onSubmit={handleSubmit(onSubmit)}
             >
                 <input type="hidden" name="form-name" value="contact" />
                 <h1 className='text-2xl font-semibold text-navy-800'>お問い合わせ</h1>
