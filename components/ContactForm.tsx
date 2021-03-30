@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { FormEvent, VFC } from 'react';
 import { useForm } from 'react-hook-form';
 import SubmitButton from './SubmitButton';
@@ -12,13 +13,11 @@ interface InputForm {
 const ContactForm: VFC<{}> = () => {
     const { register, handleSubmit, errors } = useForm<InputForm>();
     
-    const onSubmit = async (data: FormData) => {
+    const onSubmit = async (data:any) => {
         data['form-name'] = 'contact-form';
-        await fetch('/', {
-            method: 'POST',
-            body: JSON.stringify(data)
-        })
-        .catch(() => null);
+        await axios.post('/', new URLSearchParams(data))
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
     }
 
     return (
