@@ -15,8 +15,11 @@ const AboutMe: VFC<AboutMeProps> = ({ myInfo, skill }) => {
         <div className='h-auto py-24 bg-gray-100'>
             <section className='grid lg:grid-cols-2'>
                 <section className='hidden max-w-2xl lg:block lg:ml-10 '>
-                    <img src={myInfo.image.url} alt=""/>
-                    
+                    <img 
+                        src={myInfo.image.url} 
+                        alt=""
+                        className='mx-3'
+                    />
                 </section>
                 <section>
                     <div className='mb-10 text-center'>

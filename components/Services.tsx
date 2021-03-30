@@ -16,7 +16,7 @@ const Services: VFC<ServicesProps> = () => {
                             return (
                                 <article key={id}>
                                     <div className='relative block w-24 h-24 bg-red-100 rounded-full top-24'/>
-                                    <section className='z-2 relative px-6 py-12 mt-8 space-y-3 duration-500 transform bg-gray-100 border-0.2 border-white rounded-lg backdrop-blur-10 bg-opacity-10 bg-clip-padding lg:py-24  hover:-translate-y-5'>
+                                    <section className='z-2 relative px-6 py-12 mt-8 shadow-xl space-y-3 duration-500 transform bg-gray-100 border-0.2 border-white rounded-lg backdrop-blur-10 bg-opacity-10 bg-clip-padding lg:py-24  hover:-translate-y-5'>
                                         <p className='text-navy-1000'>
                                             {icon}
                                         </p>
