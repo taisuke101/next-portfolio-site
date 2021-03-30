@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FormEvent, VFC } from 'react';
+import { VFC } from 'react';
 import { useForm } from 'react-hook-form';
 import SubmitButton from './SubmitButton';
 
@@ -13,7 +13,7 @@ interface InputForm {
 const ContactForm: VFC<{}> = () => {
     const { register, handleSubmit, errors } = useForm<InputForm>();
     
-    const onSubmit = async (data:any) => {
+    const onSubmit = async (data: Record<string, string>) => {
         data['form-name'] = 'contact-form';
         await axios.post('/', new URLSearchParams(data))
             .then(res => console.log(res))
@@ -26,6 +26,7 @@ const ContactForm: VFC<{}> = () => {
                 className='flex flex-col p-10 sm:w-3/4 mx-auto mt-6 space-y-5 text-center bg-gray-100 border-0.2 border-white rounded-lg shadow-xl bg-opacity-30'
                 method='post'
                 data-netlify='true'
+                action='/success/'
                 onSubmit={handleSubmit(onSubmit)}
             >
                 <input type="hidden" name="form-name" value="contact" />
