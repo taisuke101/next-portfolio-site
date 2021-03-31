@@ -3,7 +3,7 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}', 
     './components/**/*.{js,ts,jsx,tsx}'
   ],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     backdropFilter: {
       'none': 'none',
@@ -52,7 +52,9 @@ module.exports = {
   },
   variants: {
     extend: {
-      textColor: ['active', 'focus']
+      textColor: ['active', 'focus'],
+      borderColor: ['checked'],
+      inset: ['checked']
     },
   },
   plugins: [
