@@ -20,9 +20,9 @@ const Services: VFC<ServicesProps> = () => {
                                         <p className='text-navy-1000 dark:text-navy-400'>
                                             {icon}
                                         </p>
-                                        <h4 className='text-3xl font-semibold text-gray-800 dark:text-gray-300 lg:text-4xl'>
+                                        <p className='text-3xl font-semibold text-gray-800 dark:text-gray-300 lg:text-4xl'>
                                             {title}
-                                        </h4>
+                                        </p>
                                         <div className='w-20 h-1 mx-auto mb-5 bg-navy-600 sm:w-full'></div>
                                         <p className='text-lg font-normal text-gray-800 break-words dark:text-gray-200 lg:text-xl'>
                                             {text}

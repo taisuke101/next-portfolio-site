@@ -15,9 +15,9 @@ const Hero: VFC<HeroProps> = ({}) => {
                     <h1 className='text-5xl font-bold tracking-wider break-words sm:text-6xl text-navy-1000 dark:text-gray-200'>
                         Taisuke Yamamoto
                     </h1>
-                    <h5 className='mt-4 text-xl font-semibold tracking-wider text-gray-800 dark:text-navy-600 sm:text-3xl'>
+                    <p className='mt-4 text-xl font-semibold tracking-wider text-gray-800 dark:text-navy-600 sm:text-3xl'>
                         WebEngineer,Developper
-                    </h5>
+                    </p>
                     <div className='pt-5'>
                         <LinkButton
                             goto='/contact'

@@ -12,12 +12,14 @@ interface SEOProps {
 const SEO: VFC<SEOProps> = ({ siteTitle, title, description }) => {
     return (
         <Head>
+            <html lang='ja' />
             <title>{`${siteTitle} | ${Data.title}`}</title>
             <meta property='og:title' content={title} />
             <meta property='og:description' content={description} />
             <meta property='og:image' content={Data.image} />
             <meta property='og:url' content={Data.url} />
             <meta property='og:site_name' content={Data.title} />
+            <meta name='Description' content={description}/>
             <meta name='twitter:card' content='summary_large_image' />
             <meta name='twitter:creator' content={Data.twitterUsername} />
             <meta name='twitter:description' content={Data.description} />
