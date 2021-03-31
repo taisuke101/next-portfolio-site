@@ -3,6 +3,7 @@ import React, { FC } from 'react'
 
 import AboutMe from '../components/AboutMe';
 import Experience from '../components/Experience';
+import SEO from '../components/SEO';
 import { FetchJob, Job, MyInfo, Stack } from '../types';
 
 interface AboutProps {
@@ -14,6 +15,11 @@ interface AboutProps {
 const About: FC<AboutProps> = ({ myInfo, skill, jobs }) => {
         return (
             <>
+                <SEO 
+                    siteTitle='About'
+                    title={'About'}
+                    description={'山本泰佑の個人、経歴について紹介するページです'}
+                />
                 <AboutMe 
                     myInfo={myInfo}
                     skill={skill}
