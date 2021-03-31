@@ -14,7 +14,10 @@ const SocialLinks: VFC<SocialLinksProps>  = ({ styleClass, containerClass }) => 
                 {socialData.map(link => (
                     <li key={link.id}>
                         <Link href={link.url}>
-                            <a className={`transition duration-200 transform ${styleClass ? styleClass : ''}`}>
+                            <a 
+                                className={`transition duration-200 transform ${styleClass ? styleClass : ''}`}
+                                aria-label="SNSのページに遷移するリンク"
+                            >
                                 {link.icon}
                             </a>
                         </Link>

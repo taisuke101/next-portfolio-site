@@ -30,6 +30,7 @@ const PageLinks: VFC<{}> = () => {
                         </ul>
                         <button
                             type="button"
+                            aria-label="ナビゲーションの切替"
                             className="mr-3 text-4xl md:hidden text-navy-900 dark:text-gray-200"
                             onClick={() => setOpen(true)}
                         >

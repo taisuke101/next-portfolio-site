@@ -33,7 +33,7 @@ const Experience: VFC<ExperienceProps> = ({ jobs, showLink }) => {
                 </section>
                 <section className='space-y-12 md:space-y-7 md:max-w-lg lg:max-w-full text-navy-800'>
                     <h2 className='mt-10 text-2xl dark:text-navy-400'>{position}</h2>
-                    <h4 className='dark:text-navy-500'>{from} ~ {until}</h4>
+                    <p className='dark:text-navy-500'>{from} ~ {until}</p>
                     <div className='flex ml-3 md:ml-0'>
                         <FaAngleDoubleRight className='hidden sm:block'/>
                         <Markdown className='ml-4 prose md:break-words dark:text-gray-300'>

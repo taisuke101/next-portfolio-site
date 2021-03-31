@@ -28,9 +28,6 @@ const Home: FC<HomeProps> = ({ jobs, project }) => {
         jobs={jobs}
         showLink={true}
       />
-      {/* <ProjectCards 
-        projects={projects}
-      /> */}
       <ProjectCard 
         project={project}
       />

@@ -12,9 +12,9 @@ const Footer: FC<FooterProps> = () => {
                         styleClass='text-white hover:text-navy-500 sm:text-5xl'
                         containerClass='flex justify-center'
                     />
-                    <h4 className='mt-4 text-xl sm:text-2xl'>
+                    <p className='mt-4 text-xl sm:text-2xl'>
                         Created By <span>Taisuke Yamamoto</span>
-                    </h4>
+                    </p>
                 </section>
             </footer>
         );
