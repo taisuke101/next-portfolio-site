@@ -14,7 +14,7 @@ const Header: FC<HeaderProps> = () => {
                 <div className='flex justify-between'>
                     <Link href='/'>
                         <a className='mr-2 text-3xl tracking-widest text-gray-800 lg:text-5xl dark:text-gray-200'>
-                            <Image 
+                            <img 
                                 src='/logo.webp'
                                 width={175}
                                 height={50} 

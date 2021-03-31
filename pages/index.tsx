@@ -5,6 +5,7 @@ import Experience from "../components/Experience";
 import Hero from "../components/Hero";
 import ProjectCard from "../components/ProjectCard";
 import ProjectCards from "../components/ProjectCards";
+import SEO from "../components/SEO";
 import Services from "../components/Services";
 import { Job, FetchJob, FetchProject, Project } from "../types";
 
@@ -16,6 +17,11 @@ interface HomeProps {
 const Home: FC<HomeProps> = ({ jobs, project }) => {
   return (
     <>
+      <SEO 
+        siteTitle='Home'
+        title={'Home'}
+        description={'ホームページです'}
+      />
       <Hero />
       <Services />
       <Experience 
