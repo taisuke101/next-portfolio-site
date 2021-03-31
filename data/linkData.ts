@@ -6,7 +6,7 @@ export const linkData = [
     },
     {
         id: 2,
-        text: 'About Me',
+        text: 'About',
         url: '/about'
     },
     {

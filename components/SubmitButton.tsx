@@ -8,7 +8,7 @@ interface SubmitButtonProps {
 const SubmitButton: VFC<SubmitButtonProps> = ({ text }) => {
         return (
             <button
-                className='p-2 text-lg font-medium tracking-widest text-white transition duration-700 transform rounded-md hover:bg-navy-400 hover:text-black bg-navy-700 hover:-translate-y-0.5'
+                className='p-2 text-lg font-medium tracking-widest text-white transition duration-700 transform rounded-md hover:bg-navy-400 hover:text-black bg-navy-700 dark:bg-navy-800 dark:hover:bg-navy-500 hover:-translate-y-0.5'
                 type='submit'
             >
                 {text}

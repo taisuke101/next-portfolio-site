@@ -16,19 +16,18 @@ const ProjectCards: VFC<ProjectsProps> = ({ projects }) => {
     const [open, setOpen] = useState(false)
 
     return (
-        <div className='h-screen pt-24 bg-gray-100'>
+        <div className='h-screen pt-24 bg-gray-100 dark:bg-gray-900'>
             <Title title='Projects' />
             {projects.map((project) => (
-                    <>
+                    <div key={project.id}>
                         <button 
-                            key={project.id}
                             onClick={() => setOpen(true)}
                             className='block mx-auto'
                         >
                             <img 
                                 src={project.image.url}
                                 className='object-cover w-5/6 mx-auto'
-                                alt=""
+                                alt="参加プロジェクトの画像"
                             />
                         </button>
                         <ModalComponent
@@ -51,7 +50,7 @@ const ProjectCards: VFC<ProjectsProps> = ({ projects }) => {
                                 <img 
                                     src={project.image.url}
                                     className='object-cover w-4/5 mx-auto lg:w-1/2 lg:h-1/2'
-                                    alt=""
+                                    alt="参加プロジェクトの画像"
                                 />
                                 <Markdown className='mx-auto my-3 prose' >{project.description}</Markdown>
                                 {project.stack.map((skill) => (
@@ -64,7 +63,7 @@ const ProjectCards: VFC<ProjectsProps> = ({ projects }) => {
                                 ))}
                             </section>
                         </ModalComponent>
-                    </>
+                    </div>
             ))}
         </div>
     );

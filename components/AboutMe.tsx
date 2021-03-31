@@ -12,13 +12,13 @@ interface AboutMeProps {
 
 const AboutMe: VFC<AboutMeProps> = ({ myInfo, skill }) => {
     return (
-        <div className='h-auto py-24 bg-gray-100'>
+        <div className='h-auto py-24 bg-gray-100 dark:bg-gray-900'>
             <section className='grid lg:grid-cols-2'>
-                <section className='hidden max-w-2xl lg:block lg:ml-10 '>
+                <section className='hidden max-w-2xl my-5 lg:block lg:mx-5 lg:mt-14'>
                     <img 
                         src={myInfo.image.url} 
-                        alt=""
-                        className='mx-3'
+                        alt="自己紹介の画像"
+                        className='object-cover h-1/2'
                     />
                 </section>
                 <section>
@@ -26,15 +26,15 @@ const AboutMe: VFC<AboutMeProps> = ({ myInfo, skill }) => {
                         <Title title='About Me'/>
                     </div>
                     <SubTitle subTitle='出身地' />
-                    <h2 className='py-4 mb-5 text-2xl text-center lg:text-left'>
+                    <h2 className='py-4 mb-5 text-2xl text-center lg:text-left dark:text-gray-300'>
                         {myInfo.from}
                     </h2>
                     <SubTitle subTitle='説明' />
-                    <Markdown className='mx-3 mb-5 prose-sm text-center whitespace-pre-wrap lg:text-left sm:prose-lg'>
+                    <Markdown className='mx-3 mb-5 prose-sm text-center whitespace-pre-wrap lg:text-left sm:prose-lg dark:text-gray-300'>
                         {myInfo.description}
                     </Markdown>
                     <SubTitle subTitle='趣味' />
-                    <Markdown className='mx-3 mb-5 prose-sm text-center whitespace-pre-wrap lg:text-left sm:prose-lg'>
+                    <Markdown className='mx-3 mb-5 prose-sm text-center whitespace-pre-wrap lg:text-left sm:prose-lg dark:text-gray-300'>
                         {myInfo.hobby}
                     </Markdown>
                     <SubTitle subTitle='技術スタック'/>
@@ -42,7 +42,7 @@ const AboutMe: VFC<AboutMeProps> = ({ myInfo, skill }) => {
                         {skill.map(skill => (
                             <span 
                                 key={skill.id}
-                                className='inline-block p-2 mx-2 mt-3 mr-3 font-light tracking-widest text-gray-600 break-words bg-gray-200 rounded-lg'
+                                className='inline-block p-2 mx-2 mt-3 mr-3 font-light tracking-widest text-gray-600 break-words bg-gray-200 rounded-lg dark:text-navy-900 dark:bg-gray-400'
                             >{skill.stack}</span>
                         ))}
                     </section>
