@@ -19,6 +19,7 @@ const Header: FC<HeaderProps> = () => {
                                 width={175}
                                 height={50} 
                                 alt='ロゴ画像'
+                                loading='lazy'
                             />
                         </a>
                     </Link>

@@ -14,11 +14,14 @@ const AboutMe: VFC<AboutMeProps> = ({ myInfo, skill }) => {
     return (
         <div className='h-auto py-24 bg-gray-100 dark:bg-gray-900'>
             <section className='grid lg:grid-cols-2'>
-                <section className='hidden max-w-2xl my-5 lg:block lg:mx-5 lg:mt-14'>
+                <section className='hidden max-w-2xl my-5 lg:block lg:mx-auto lg:mt-14'>
                     <img 
                         src={myInfo.image.url} 
                         alt="自己紹介の画像"
+                        width='auto'
+                        height='auto'
                         className='object-cover h-1/2'
+                        loading='lazy'
                     />
                 </section>
                 <section>

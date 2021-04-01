@@ -15,9 +15,12 @@ const ProjectCard: VFC<ProjectCardProps> = ({ project }) => {
                 {/* TODO: ダークモード時画像を暗くする */}
                 <div> 
                     <img 
-                        src={project.image.url} 
+                        src={project.image.url}
+                        width='auto'
+                        height='auto' 
                         className='block object-cover mx-auto dark:bg-opacity-60 lg:w-2/3'
                         alt='最近の参加プロジェクトの画像'
+                        loading='lazy'
                     />
                 </div>
                 <LinkButton 
