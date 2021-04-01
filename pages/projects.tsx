@@ -1,8 +1,9 @@
 import { GetStaticProps } from 'next';
-import React, { FC } from 'react'
+import React, { FC } from 'react';
+import dynamic from 'next/dynamic';
 
-import ProjectCards from '../components/ProjectCards'
 import SEO from '../components/SEO';
+const ProjectCards = dynamic(import('../components/ProjectCards'));
 import { Project, FetchProject } from '../types';
 
 interface ProjectsProps {

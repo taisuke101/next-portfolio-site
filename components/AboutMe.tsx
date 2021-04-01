@@ -1,5 +1,5 @@
-import { VFC } from 'react'
-import Markdown from 'markdown-to-jsx'
+import { VFC } from 'react';
+import Markdown from 'markdown-to-jsx';
 
 import { MyInfo, Stack } from '../types';
 import SubTitle from './SubTitle';

@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
-import Image from 'next/image'
+import dynamic from 'next/dynamic';
 
-import PageLinks from './PageLinks';
-import ToggleDarkMode from './ToggleDarkMode';
+const PageLinks = dynamic(import('./PageLinks'));
+const ToggleDarkMode = dynamic(import('./ToggleDarkMode'));
 
 interface HeaderProps {
 }

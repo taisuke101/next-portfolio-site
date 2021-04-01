@@ -1,10 +1,10 @@
-import React, { FC } from 'react'
+import React, { FC } from 'react';
+import dynamic from 'next/dynamic';
 
-import ContactForm from '../components/ContactForm';
 import SEO from '../components/SEO';
+const ContactForm = dynamic(import('../components/ContactForm'));
 
 interface ContactProps {
-
 }
 
 const Contact: FC<ContactProps> = ({}) => {
