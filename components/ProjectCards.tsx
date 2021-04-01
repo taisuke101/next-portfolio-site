@@ -16,7 +16,7 @@ const ProjectCards: VFC<ProjectsProps> = ({ projects }) => {
     const [open, setOpen] = useState(false)
 
     return (
-        <div className='h-screen pt-24 bg-gray-100 dark:bg-gray-900'>
+        <div className='h-auto py-24 bg-gray-100 dark:bg-gray-900'>
             <Title title='Projects' />
             {projects.map((project) => (
                     <div key={project.id}>

@@ -1,9 +1,10 @@
 import { GetStaticProps } from 'next';
-import React, { FC } from 'react'
+import React, { FC } from 'react';
+import dynamic from 'next/dynamic';
 
-import AboutMe from '../components/AboutMe';
-import Experience from '../components/Experience';
 import SEO from '../components/SEO';
+const AboutMe = dynamic(import('../components/AboutMe'));
+const Experience = dynamic(import('../components/Experience'));
 import { FetchJob, Job, MyInfo, Stack } from '../types';
 
 interface AboutProps {

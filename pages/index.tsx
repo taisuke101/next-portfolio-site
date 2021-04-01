@@ -1,12 +1,12 @@
 import { GetStaticProps } from "next";
 import { FC } from "react";
-import Experience from "../components/Experience";
+import dynamic from 'next/dynamic';
 
-import Hero from "../components/Hero";
-import ProjectCard from "../components/ProjectCard";
-import ProjectCards from "../components/ProjectCards";
 import SEO from "../components/SEO";
-import Services from "../components/Services";
+const Hero = dynamic(import('../components/Hero'));
+const ProjectCard = dynamic(import('../components/ProjectCard'));
+const Experience = dynamic(import('../components/Experience'));
+const Services = dynamic(import('../components/Services'));
 import { Job, FetchJob, FetchProject, Project } from "../types";
 
 interface HomeProps {
