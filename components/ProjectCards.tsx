@@ -26,8 +26,11 @@ const ProjectCards: VFC<ProjectsProps> = ({ projects }) => {
                         >
                             <img 
                                 src={project.image.url}
+                                width='auto'
+                                height='auto'
                                 className='object-cover w-5/6 mx-auto'
                                 alt="参加プロジェクトの画像"
+                                loading='lazy'
                             />
                         </button>
                         <ModalComponent
@@ -49,8 +52,11 @@ const ProjectCards: VFC<ProjectsProps> = ({ projects }) => {
                                 </button>
                                 <img 
                                     src={project.image.url}
+                                    width='auto'
+                                    height='auto'
                                     className='object-cover w-4/5 mx-auto lg:w-1/2 lg:h-1/2'
                                     alt="参加プロジェクトの画像"
+                                    loading='lazy'
                                 />
                                 <Markdown className='mx-auto my-3 prose' >{project.description}</Markdown>
                                 {project.stack.map((skill) => (
