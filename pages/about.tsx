@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import dynamic from 'next/dynamic';
 
 import SEO from '../components/SEO';
-const AboutMe = dynamic(import('../components/AboutMe'));
+import AboutMe from '../components/AboutMe';
 const Experience = dynamic(import('../components/Experience'));
 import { FetchJob, Job, MyInfo, Stack } from '../types';
 
